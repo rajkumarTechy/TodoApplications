@@ -1,8 +1,8 @@
 import { Model } from 'mongoose';
 import { JwtService } from '@nestjs/jwt';
 import { Response } from 'express';
-import { Users } from 'src/users/Schemas/user.model';
-import { CreateUserDto } from 'src/users/dto/create-user.dto';
+import { Users } from '../users/Schemas/user.model';
+import { CreateUserDto } from '../users/dto/create-user.dto';
 export declare class AuthService {
     private userModel;
     private jwtService;
