@@ -5,15 +5,13 @@ import {
   NotFoundException,
   UnauthorizedException,
 } from '@nestjs/common';
-// import { createUserDto } from './dto/create-dto';
 import { InjectModel } from '@nestjs/mongoose';
-// import { User } from './Schema/user.add';
 import mongoose, { Model } from 'mongoose';
 import { JwtService } from '@nestjs/jwt';
 import { Response } from 'express';
 import { sendEmail } from '../Utils/EmailService';
-import { Users } from 'src/users/Schemas/user.model';
-import { CreateUserDto } from 'src/users/dto/create-user.dto';
+import { Users } from '../users/Schemas/user.model';
+import { CreateUserDto } from '../users/dto/create-user.dto';
 import * as bcrypt from 'bcryptjs';
 
 @Injectable()
