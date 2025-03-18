@@ -6,7 +6,7 @@ import {
   UnauthorizedException,
 } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import mongoose, { Model } from 'mongoose';
+import { Model } from 'mongoose';
 import { JwtService } from '@nestjs/jwt';
 import { Response } from 'express';
 import { sendEmail } from '../Utils/EmailService';
