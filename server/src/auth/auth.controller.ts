@@ -13,7 +13,7 @@ import {
 import { AuthService } from './auth.service';
 import { AuthGuard } from './Guards/auth.guard';
 import { Roles } from './decorator/role.decorator';
-import { CreateUserDto } from 'src/users/dto/create-user.dto';
+import { CreateUserDto } from '../users/dto/create-user.dto';
 
 @Controller('auth')
 export class AuthController {

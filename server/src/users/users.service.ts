@@ -10,7 +10,6 @@ import { Users } from './Schemas/user.model';
 import { Model } from 'mongoose';
 
 import * as bcrypt from 'bcryptjs';
-import { response, Response } from 'express';
 
 @Injectable()
 export class UsersService {
