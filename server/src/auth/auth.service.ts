@@ -11,7 +11,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import mongoose, { Model } from 'mongoose';
 import { JwtService } from '@nestjs/jwt';
 import { Response } from 'express';
-import { sendEmail } from 'src/Utils/EmailService';
+import { sendEmail } from '../Utils/EmailService';
 import { Users } from 'src/users/Schemas/user.model';
 import { CreateUserDto } from 'src/users/dto/create-user.dto';
 import * as bcrypt from 'bcryptjs';
