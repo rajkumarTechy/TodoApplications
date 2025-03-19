@@ -10,15 +10,23 @@ async function bootstrap() {
   app.enableCors({
     origin: ['https://todo-applications-tec1.vercel.app'],
     credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
-    allowedHeaders: [
-      'Content-Type',
-      'Authorization',
-      'X-Requested-With',
-      'Accept',
-      'Origin'
-    ],
+    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS']
   });
+
+  app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "https://todo-applications-tec1.vercel.appp");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header("Access-Control-Allow-Credentials", "true");
+
+    if (req.method === 'OPTIONS') {
+      res.header("Access-Control-Allow-Methods", "GET, POST, PUT, PATCH, DELETE");
+      return res.status(200).json({});
+    }
+
+    next();
+  });
+
+  
 
   await app.listen(process.env.PORT ?? 3001);
 }
