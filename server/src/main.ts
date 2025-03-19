@@ -14,7 +14,7 @@ async function bootstrap() {
   });
 
   app.use(function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "https://todo-applications-tec1.vercel.appp");
+    res.header("Access-Control-Allow-Origin", "https://todo-applications-tec1.vercel.app");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     res.header("Access-Control-Allow-Credentials", "true");
 
