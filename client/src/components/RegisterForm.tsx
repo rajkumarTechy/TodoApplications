@@ -2,6 +2,7 @@ import axios from "axios";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { API_URL } from "../utils/API_URL";
 
 interface formDataProps {
   email: string;
@@ -27,7 +28,7 @@ const RegisterForm = () => {
     }
 
     try {
-      const res = await axios.post("http://localhost:3001/users", { email: data.email, password: data.password });
+      const res = await axios.post(`${API_URL}/users`, { email: data.email, password: data.password });
 
       if (res.status === 200 || 201) {
         toast.success(res.data.message);

@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { toast } from "react-toastify";
+import { API_URL } from "../utils/API_URL";
 
 interface ResetData {
   newPassword: string;
@@ -20,7 +21,7 @@ const ResetPassword = () => {
     const Id = decode.userId;
   
     try {
-      const res = await axios.get(`http://localhost:3001/auth/isRevoked/${Id}`);
+      const res = await axios.get(`${API_URL}/auth/isRevoked/${Id}`);
 
       if(res.data.isRevoked === true) {
         alert("Token Already Used");
@@ -63,7 +64,7 @@ const ResetPassword = () => {
     const token = searchParams.get("token");
 
     try {
-      const res = await axios.patch("http://localhost:3001/auth/newPassword", {
+      const res = await axios.patch(`${API_URL}/auth/newPassword`, {
         password: data.newPassword,
         token: token,
       },);

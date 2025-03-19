@@ -112,7 +112,7 @@ const Home = () => {
 
   const handleDelete = async (taskId: string) => {
     try {
-      const res = await axios.delete(`http://localhost:3001/tasks/${taskId}`);
+      const res = await axios.delete(`${API_URL}/tasks/${taskId}`);
 
       if (res) {
         toast.success(res.data.message);
