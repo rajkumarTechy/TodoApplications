@@ -10,7 +10,12 @@
     {
       "src": "/(.*)",
       "dest": "src/main.ts",
-      "methods": ["GET","POST","UPDATE","PUT","PATCH"]
+      "methods": ["GET", "POST", "UPDATE", "PUT", "PATCH"],
+      "headers": {
+        "Access-Control-Allow-Origin": "https://todo-applications-tec1.vercel.app",
+        "Access-Control-Allow-Credentials": "true",
+        "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
+      }
     }
   ]
 }
